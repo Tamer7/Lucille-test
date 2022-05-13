@@ -20,6 +20,9 @@ class Tester(unittest.TestCase):
         driver.get("http://the-internet.herokuapp.com/large")
         self.assertIn("large", driver.current_url)
         time.sleep(5)
+        el = driver.find_element_by_xpath("//*[@id='large-table']")
+        s = el.text
+        print("Element exist -" + s)
 
 
 
